@@ -64,7 +64,7 @@ export default function App() {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'green',
+        backgroundColor: '#f0f0f0',
       }}></View>
   );
 }
