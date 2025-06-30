@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-
 import {Alert, Button} from 'react-native';
-import {OfferQRCode} from './src/components/CustomCompo/OfferQRCode';
-import {QRScanner} from './src/components/CustomCompo/QRScanner';
-import {ShareScreen} from './src/screens/ShareScreen';
-import {ReceiveScreen} from './src/screens/ReceiveScreen';
-import {Peer} from './src/webrtc/Peer';
+import {QRScanner} from '../components/CustomCompo/QRScanner';
+import {ReceiveScreen} from '../screens/ReceiveScreen';
+import {ShareScreen} from '../screens/ShareScreen';
+import {Peer} from '../webrtc/Peer';
+import {OfferQRCode} from '../components/CustomCompo/OfferQRCode';
 
 const Stack = createStackNavigator();
 
