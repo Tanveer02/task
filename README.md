@@ -12,7 +12,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 First, you will need to run **Metro**, the JavaScript build tool for React Native.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+To start the Metro dev server, ru n the following command from the root of your React Native project:
 
 ```sh
 # Using npm
@@ -98,11 +98,18 @@ To learn more about React Native, take a look at the following resources:
 - [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+<<<<<<< HEAD
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
 =======
 =======
 >>>>>>> a24526e (Initial commit)
 >>>>>>> e0abb79 (Initial commit)
+=======
+- # [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+  =======
+  > > > > > > > a24526e (Initial commit)
+
+>>>>>>> 0fb7fb9 (chnage)
 # Cross-Send-Application
 
 ## Getting started
@@ -207,9 +214,16 @@ For open source projects, say how it is licensed.
 
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> a24526e1375d227b967edf37e41b288990962962
 =======
 >>>>>>> a24526e (Initial commit)
 >>>>>>> e0abb79 (Initial commit)
+=======
+
+> > > > > > > # a24526e1375d227b967edf37e41b288990962962
+> > > > > > >
+> > > > > > > a24526e (Initial commit)
+>>>>>>> 0fb7fb9 (chnage)
