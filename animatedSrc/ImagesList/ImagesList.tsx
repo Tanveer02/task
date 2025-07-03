@@ -1,14 +1,15 @@
-import {Animated, Easing, Image, StyleSheet, Text, View} from 'react-native';
+import {Easing, Image, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect, useRef} from 'react';
 import {commonStyle} from '../../src/constants/commonStyle';
 import {Marquee} from '@animatereactnative/marquee';
 import {width} from '../../src/constants/constants';
-import {
+import Animated, {
   FadeIn,
   runOnJS,
   useAnimatedReaction,
   useSharedValue,
 } from 'react-native-reanimated';
+import {Stagger} from '@animatereactnative/stagger';
 
 const imageData = [
   'https://i.pinimg.com/736x/90/25/4f/90254fad9b81273e05656aa2ba6aaa9b.jpg',
@@ -45,19 +46,27 @@ export default function ImagesList() {
           height: itemHeight,
           borderRadius: 16,
         }}>
-        <Image source={{uri: image}} style={{flex: 1, borderRadius: 16}} />
+        <Image source={{uri: image}} style={{flex: 0.9, borderRadius: 16}} />
       </View>
     );
   };
 
   return (
     <View style={[commonStyle.container, {backgroundColor: '#000'}]}>
-      <View style={[StyleSheet.absoluteFillObject]}>
+      <View
+        style={[
+          StyleSheet.absoluteFillObject,
+          {
+            opacity: 0.5,
+          },
+        ]}>
         <Animated.Image
           key={`image-${activeIndex}`}
-          style={{flex: 1, opacity: 0.5}}
+          style={{flex: 1}}
           source={{uri: imageData[activeIndex]}}
-          blurRadius={10}
+          blurRadius={50}
+          entering={FadeIn.duration(1000)}
+          exiting={FadeIn.duration(1000)}
         />
       </View>
       <Marquee spacing={16} reverse={false} position={offset}>
@@ -67,6 +76,9 @@ export default function ImagesList() {
           ))}
         </View>
       </Marquee>
+      <Stagger>
+        <Text style={{}}>AnimateReactNative.com</Text>
+      </Stagger>
     </View>
   );
 }
