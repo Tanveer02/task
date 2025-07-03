@@ -1,4 +1,7 @@
-const images = {};
+const images = {
+  bird: require('../images/birdStory.jpg'),
+  profileImage: require('../images/profileDummy.png'),
+};
 
 export default images;
 

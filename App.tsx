@@ -6,12 +6,14 @@ import 'react-native-gesture-handler';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {View} from 'react-native';
 import ImageSlider from './animatedSrc/ImageSlider/ImageSlider';
+import BottomTabNav from './src/testNavigation/BottomTabNav/BottomTabNav';
 
 export default function App() {
   return (
     <GestureHandlerRootView style={{flex: 1}}>
       <View style={commonStyle.container}>
-        <ImageSlider />
+        {/* <ImageSlider /> */}
+        <BottomTabNav />
       </View>
     </GestureHandlerRootView>
   );
