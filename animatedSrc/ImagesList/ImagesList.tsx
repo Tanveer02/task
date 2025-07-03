@@ -1,5 +1,5 @@
-import {Animated, Image, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {Animated, Easing, Image, StyleSheet, Text, View} from 'react-native';
+import React, {useEffect, useRef} from 'react';
 import {commonStyle} from '../../src/constants/commonStyle';
 import {Marquee} from '@animatereactnative/marquee';
 import {width} from '../../src/constants/constants';
@@ -10,19 +10,19 @@ import {
   useSharedValue,
 } from 'react-native-reanimated';
 
+const imageData = [
+  'https://i.pinimg.com/736x/90/25/4f/90254fad9b81273e05656aa2ba6aaa9b.jpg',
+  'https://xinva.ai/wp-content/uploads/2023/12/111.jpg',
+  'https://img.freepik.com/premium-photo/cartoon-char…h-glasses-backpack-generative-ai_974533-16980.jpg',
+  'https://img.freepik.com/premium-photo/captivating-…boys-lovely-girls-digital-world_1142283-14470.jpg',
+  'https://i.pinimg.com/736x/6c/c2/09/6cc2096f433ba9dc83697cac26d679f5.jpg',
+];
 export default function ImagesList() {
-  const imageData = [
-    'https://i.pinimg.com/736x/90/25/4f/90254fad9b81273e05656aa2ba6aaa9b.jpg',
-    'https://xinva.ai/wp-content/uploads/2023/12/111.jpg',
-    'https://img.freepik.com/premium-photo/cartoon-char…h-glasses-backpack-generative-ai_974533-16980.jpg',
-    'https://img.freepik.com/premium-photo/captivating-…boys-lovely-girls-digital-world_1142283-14470.jpg',
-    'https://i.pinimg.com/736x/6c/c2/09/6cc2096f433ba9dc83697cac26d679f5.jpg',
-  ];
   const _itemWidth = width * 0.62;
   const itemHeight = _itemWidth * 1.67;
   const offset = useSharedValue(0);
   const [activeIndex, setActiveIndex] = React.useState(0);
-  const _itemSize = _itemWidth + 10; // 16 is the spacing between items
+  const _itemSize = _itemWidth + 10; // 10 is the spacing between items
 
   useAnimatedReaction(
     () => {
@@ -33,10 +33,7 @@ export default function ImagesList() {
     value => {
       // calculate the index
       // setState the index
-      console.log(value);
       runOnJS(setActiveIndex)(value);
-
-      // setActiveIndex()
     },
   );
 
@@ -58,7 +55,7 @@ export default function ImagesList() {
       <View style={[StyleSheet.absoluteFillObject]}>
         <Animated.Image
           key={`image-${activeIndex}`}
-          style={{flex: 1}}
+          style={{flex: 1, opacity: 0.5}}
           source={{uri: imageData[activeIndex]}}
           blurRadius={10}
         />
