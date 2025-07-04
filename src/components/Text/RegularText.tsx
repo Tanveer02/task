@@ -1,22 +1,22 @@
-// src/components/CustomText.tsx
 import React, {ReactNode} from 'react';
 import {Text, StyleSheet, TextStyle, StyleProp} from 'react-native';
+import {fontFamily} from '../../theme/typography';
+import {colors} from '../../theme/colors';
 
 interface CustomTextProps {
   children: ReactNode;
   style?: StyleProp<TextStyle>;
   bold?: boolean;
-  italic?: boolean;
+  regular?: boolean;
   center?: boolean;
   numberOfLines?: number;
-  // more boolean shortcuts as needed
 }
 
 const CustomText: React.FC<CustomTextProps> = ({
   children,
   style,
   bold,
-  italic,
+  regular,
   center,
   numberOfLines,
   ...rest
@@ -24,7 +24,7 @@ const CustomText: React.FC<CustomTextProps> = ({
   const combinedStyles = StyleSheet.flatten([
     styles.base,
     bold && styles.bold,
-    italic && styles.italic,
+    regular && styles.regular,
     center && styles.center,
     style,
   ]) as TextStyle;
@@ -39,13 +39,13 @@ const CustomText: React.FC<CustomTextProps> = ({
 const styles = StyleSheet.create({
   base: {
     fontSize: 16,
-    color: '#000',
+    color: colors.black,
+  },
+  regular: {
+    fontFamily: fontFamily.Regular,
   },
   bold: {
-    fontWeight: 'bold',
-  },
-  italic: {
-    fontStyle: 'italic',
+    fontFamily: fontFamily.Bold,
   },
   center: {
     textAlign: 'center',

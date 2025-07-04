@@ -1,4 +1,4 @@
-import images from '../assets/fonts/images/images';
+import images from '../assets/images/images';
 
 export const storiesMockData = [
   {

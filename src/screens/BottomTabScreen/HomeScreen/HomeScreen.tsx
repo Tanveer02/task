@@ -5,7 +5,7 @@ import CustomHeader from '../../../components/Headers/CustomHeader';
 import {useNavigation} from '@react-navigation/native';
 import CustomPostCard from '../../../components/CustomCard/CustomPostCard';
 import HorizontalStories from './component/HorizontalStories';
-import images from '../../../assets/fonts/images/images';
+import images from '../../../assets/images/images';
 import {colors} from '../../../theme/colors';
 
 const FeedScreen: React.FC = () => {

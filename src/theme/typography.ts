@@ -1,15 +1,15 @@
 /**
  * Get font's from this file
  */
-import { StyleSheet, Platform } from "react-native";
-import { Dimensions } from "react-native";
-import { colors } from "./colors";
+import {StyleSheet, Platform} from 'react-native';
+import {Dimensions} from 'react-native';
+import {colors} from './colors';
 
 /**
  * normalize function return's integer value for font size
  */
 export function normalize(size: any) {
-  return Math.ceil(size / Dimensions.get("window")?.fontScale);
+  return Math.ceil(size / Dimensions.get('window')?.fontScale);
 }
 
 export const fontsSize = {
@@ -34,10 +34,10 @@ export const fontsSize = {
  * fontFamily returns fonts style according to platform
  */
 export const fontFamily = {
-  Bold: "Figtree-Bold",
-  Semibold: "Figtree-SemiBold",
-  Regular: "Figtree-Regular",
-  SemiboldItalic: "Figtree-SemiBoldItalic",
+  Bold: 'Caveat-Bold',
+  Semibold: 'Caveat-SemiBold',
+  Regular: 'Caveat-Regular',
+  Medium: 'Caveat-Medium',
 };
 
 /**

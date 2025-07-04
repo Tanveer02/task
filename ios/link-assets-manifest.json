@@ -1,0 +1,21 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Caveat-Bold.ttf",
+      "sha1": "7e25130801abaebb0832230938d96d90ab0c6447"
+    },
+    {
+      "path": "src/assets/fonts/Caveat-Medium.ttf",
+      "sha1": "03178855449616f6c8b150d5298328045511e203"
+    },
+    {
+      "path": "src/assets/fonts/Caveat-Regular.ttf",
+      "sha1": "50bc97e13484fd2c382b44c35d86604c42085d97"
+    },
+    {
+      "path": "src/assets/fonts/Caveat-SemiBold.ttf",
+      "sha1": "2de384a35986b750be232f119194d42389168cbc"
+    }
+  ]
+}
