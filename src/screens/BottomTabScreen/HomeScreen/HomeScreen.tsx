@@ -8,7 +8,7 @@ import HorizontalStories from './component/HorizontalStories';
 import images from '../../../assets/images/images';
 import {colors} from '../../../theme/colors';
 
-const FeedScreen: React.FC = () => {
+const HomeScreen: React.FC = () => {
   //   const navigation: any = useNavigation();
   return (
     <View style={styles.container}>
@@ -32,7 +32,7 @@ const FeedScreen: React.FC = () => {
   );
 };
 
-export default FeedScreen;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: colors.white},
