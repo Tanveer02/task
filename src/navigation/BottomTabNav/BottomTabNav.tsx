@@ -2,8 +2,11 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import type {RootTabParamList} from './RootTabs';
 import {tabScreens} from './tabScreens';
+import {RootTabParamList} from '../../types/types';
+import {colors} from '../../theme/colors';
+import {StyleSheet} from 'react-native';
+import Icon from '../../components/Icon/Icon';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -11,10 +14,11 @@ export default function RootTabs() {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
+        tabBarStyle: styles.tabBar,
         headerShown: false,
         tabBarIcon: ({focused, color, size}) => {
           const iconName =
-            route.name === 'Home'
+            route?.name == 'Home'
               ? focused
                 ? 'ios-home'
                 : 'ios-home-outline'
@@ -22,7 +26,14 @@ export default function RootTabs() {
               ? 'ios-settings'
               : 'ios-settings-outline';
 
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return (
+            <Icon
+              family={'AntDesign'}
+              name={iconName}
+              size={size}
+              color={color}
+            />
+          );
         },
         tabBarActiveTintColor: 'black',
         tabBarInactiveTintColor: 'gray',
@@ -39,3 +50,16 @@ export default function RootTabs() {
     </Tab.Navigator>
   );
 }
+
+export const styles = StyleSheet.create({
+  tabBar: {
+    position: 'absolute',
+    left: 20,
+    right: 20,
+    height: 60,
+    backgroundColor: colors.primaryColor,
+    borderTopRightRadius: 30,
+    borderTopLeftRadius: 30,
+    elevation: 5,
+  },
+});

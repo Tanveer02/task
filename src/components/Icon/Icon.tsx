@@ -1,27 +1,22 @@
-import React, { PureComponent } from "react";
-import {
-  StyleProp,
-  TouchableOpacity,
-  ViewProps,
-  ViewStyle,
-} from "react-native"; // Import TouchableOpacity or Pressable
-import AntDesign from "react-native-vector-icons/AntDesign";
-import Entypo from "react-native-vector-icons/Entypo";
-import EvilIcons from "react-native-vector-icons/EvilIcons";
-import Feather from "react-native-vector-icons/Feather";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import Foundation from "react-native-vector-icons/Foundation";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import Octicons from "react-native-vector-icons/Octicons";
-import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import { Family } from "../../types/types";
+import React, {PureComponent} from 'react';
+import {StyleProp, TouchableOpacity, ViewProps, ViewStyle} from 'react-native'; // Import TouchableOpacity or Pressable
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import Feather from 'react-native-vector-icons/Feather';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Foundation from 'react-native-vector-icons/Foundation';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Octicons from 'react-native-vector-icons/Octicons';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {IconFamily} from '../../types/types';
 
 interface IconProps {
   name: string;
-  family: Family;
+  family: IconFamily;
   color?: string;
   size?: number;
   onPress?: () => void;
@@ -33,9 +28,9 @@ interface IconState {}
 
 export default class Icon extends PureComponent<IconProps, IconState> {
   static defaultProps = {
-    name: "home",
+    name: 'home',
     family: AntDesign,
-    color: "#000000",
+    color: '#000000',
     size: 20,
   };
 
@@ -45,42 +40,42 @@ export default class Icon extends PureComponent<IconProps, IconState> {
 
   getIconAndFamily = () => {
     let Family: any;
-    const { color, size, name, family } = this.props;
+    const {color, size, name, family} = this.props;
     switch (family) {
-      case "AntDesign":
+      case 'AntDesign':
         Family = AntDesign;
         break;
-      case "EvilIcons":
+      case 'EvilIcons':
         Family = EvilIcons;
         break;
-      case "Feather":
+      case 'Feather':
         Family = Feather;
         break;
-      case "FontAwesome":
+      case 'FontAwesome':
         Family = FontAwesome;
         break;
-      case "FontAwesome5":
+      case 'FontAwesome5':
         Family = FontAwesome5;
         break;
-      case "Foundation":
+      case 'Foundation':
         Family = Foundation;
         break;
-      case "MaterialCommunityIcons":
+      case 'MaterialCommunityIcons':
         Family = MaterialCommunityIcons;
         break;
-      case "MaterialIcons":
+      case 'MaterialIcons':
         Family = MaterialIcons;
         break;
-      case "Octicons":
+      case 'Octicons':
         Family = Octicons;
         break;
-      case "SimpleLineIcons":
+      case 'SimpleLineIcons':
         Family = SimpleLineIcons;
         break;
-      case "Ionicons":
+      case 'Ionicons':
         Family = Ionicons;
         break;
-      case "Entypo":
+      case 'Entypo':
         Family = Entypo;
         break;
       default:
@@ -90,14 +85,13 @@ export default class Icon extends PureComponent<IconProps, IconState> {
   };
 
   render() {
-    const { onPress, disabled = true, style } = this.props;
+    const {onPress, disabled = true, style} = this.props;
     return (
       <TouchableOpacity
         onPress={onPress}
         activeOpacity={0.7}
         disabled={disabled}
-        style={style}
-      >
+        style={style}>
         {this.getIconAndFamily()}
       </TouchableOpacity>
     );
