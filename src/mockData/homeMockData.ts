@@ -36,7 +36,7 @@ export const storiesMockData = [
 export const postsMockData = [
   {
     id: '0',
-    username: 'random_user',
+    username: 'random__user',
     avatar: images.bird,
     image: images.bird,
     caption: 'Smile Everyday',
@@ -46,7 +46,7 @@ export const postsMockData = [
   },
   {
     id: '1',
-    username: 'random_user',
+    username: 'random__user',
     avatar: images.bird,
     image: images.bird,
     caption: 'Smile Everyday',

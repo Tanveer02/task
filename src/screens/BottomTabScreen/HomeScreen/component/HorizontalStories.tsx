@@ -2,6 +2,8 @@ import React from 'react';
 import {View, FlatList, Image, StyleSheet} from 'react-native';
 import RegularText from '../../../../components/Text/RegularText';
 import {colors} from '../../../../theme/colors';
+import {fontsSize} from '../../../../theme/typography';
+import {shortenText} from '../../../../utils/utility';
 
 interface Story {
   id: string;
@@ -12,11 +14,13 @@ interface Story {
 const StoryItem: React.FC<{item: Story}> = ({item}) => (
   <View style={styles.storyItem}>
     <Image
-      source={item.avatar}
+      source={item?.avatar}
       resizeMode="contain"
       style={styles.storyAvatar}
     />
-    <RegularText numberOfLines={1}>{item.username}</RegularText>
+    <RegularText style={{fontSize: fontsSize.small}} numberOfLines={1}>
+      {shortenText(item?.username)}
+    </RegularText>
   </View>
 );
 
@@ -34,11 +38,15 @@ const HorizontalStories: React.FC<{
 );
 
 const styles = StyleSheet.create({
-  storiesList: {paddingHorizontal: 8, paddingVertical: 12, paddingBottom: 25},
-  storyItem: {width: 70, alignItems: 'center', marginHorizontal: 4},
+  storiesList: {
+    paddingHorizontal: 8,
+    paddingVertical: 12,
+    paddingBottom: 60,
+  },
+  storyItem: {width: 70, alignItems: 'center'},
   storyAvatar: {
-    width: 60,
-    height: 60,
+    width: 55,
+    height: 55,
     borderRadius: 20,
     borderWidth: 4,
     borderColor: colors.primaryColor,

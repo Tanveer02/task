@@ -3,7 +3,7 @@ import {View, FlatList, StyleSheet} from 'react-native';
 import {postsMockData, storiesMockData} from '../../../mockData/homeMockData';
 import CustomHeader from '../../../components/Headers/CustomHeader';
 import {useNavigation} from '@react-navigation/native';
-import PostItem from '../../../components/CustomCard/CustomPostCard';
+import CustomPostCard from '../../../components/CustomCard/CustomPostCard';
 import HorizontalStories from './component/HorizontalStories';
 import images from '../../../assets/fonts/images/images';
 import {colors} from '../../../theme/colors';
@@ -26,7 +26,7 @@ const FeedScreen: React.FC = () => {
         keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.postsList}
-        renderItem={({item}) => <PostItem item={item} />}
+        renderItem={({item}) => <CustomPostCard item={item} />}
       />
     </View>
   );
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#FF1493',
   },
-  postsList: {paddingHorizontal: 8},
+  postsList: {},
   postCard: {marginBottom: 16, padding: 0},
   postHeader: {flexDirection: 'row', alignItems: 'center', padding: 12},
   postAvatar: {width: 40, height: 40, borderRadius: 20, marginRight: 8},
