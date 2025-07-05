@@ -8,6 +8,8 @@ interface CustomTextProps {
   style?: StyleProp<TextStyle>;
   bold?: boolean;
   regular?: boolean;
+  semibold?: boolean;
+  medium?: boolean;
   center?: boolean;
   numberOfLines?: number;
 }
@@ -17,14 +19,20 @@ const CustomText: React.FC<CustomTextProps> = ({
   style,
   bold,
   regular,
+  semibold,
+  medium,
   center,
   numberOfLines,
   ...rest
 }) => {
+  const isRegular = !bold && !semibold && !medium;
   const combinedStyles = StyleSheet.flatten([
     styles.base,
+    isRegular && styles.regular,
     bold && styles.bold,
     regular && styles.regular,
+    semibold && styles.Semibold,
+    medium && styles.Medium,
     center && styles.center,
     style,
   ]) as TextStyle;
@@ -40,6 +48,12 @@ const styles = StyleSheet.create({
   base: {
     fontSize: 16,
     color: colors.black,
+  },
+  Medium: {
+    fontFamily: fontFamily.Medium,
+  },
+  Semibold: {
+    fontFamily: fontFamily.Semibold,
   },
   regular: {
     fontFamily: fontFamily.Regular,

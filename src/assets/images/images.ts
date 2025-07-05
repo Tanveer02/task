@@ -7,6 +7,9 @@ const images = {
   story4: require('../images/story4.jpg'),
   story5: require('../images/story5.jpg'),
   story6: require('../images/story6.jpg'),
+  post1: require('../images/post1.jpg'),
+  post2: require('../images/post2.jpg'),
+  post3: require('../images/post3.jpg'),
 };
 
 export default images;

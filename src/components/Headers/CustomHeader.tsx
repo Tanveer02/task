@@ -37,7 +37,7 @@ const CustomHeader: React.FC<CustomHeaderProps> = ({
         resizeMode="contain"
       />
     </TouchableOpacity>
-    <RegularText italic style={[styles.title, titleStyle]}>
+    <RegularText bold style={[styles.title, titleStyle]}>
       {title}
     </RegularText>
   </View>
@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: fontsSize.extraLarge,
-    fontWeight: 'bold',
   },
   headerIcon: {
     width: 30,

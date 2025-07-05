@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, FlatList, Image, StyleSheet} from 'react-native';
+import {
+  View,
+  FlatList,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import RegularText from '../../../../components/Text/RegularText';
 import {colors} from '../../../../theme/colors';
 import {fontsSize} from '../../../../theme/typography';
@@ -12,16 +18,16 @@ interface Story {
 }
 
 const StoryItem: React.FC<{item: Story}> = ({item}) => (
-  <View style={styles.storyItem}>
+  <TouchableOpacity style={styles.storyItem}>
     <Image
       source={item?.avatar}
       resizeMode="contain"
       style={styles.storyAvatar}
     />
-    <RegularText style={{fontSize: fontsSize.small}} numberOfLines={1}>
+    <RegularText bold style={{fontSize: fontsSize.small}} numberOfLines={1}>
       {shortenText(item?.username)}
     </RegularText>
-  </View>
+  </TouchableOpacity>
 );
 
 const HorizontalStories: React.FC<{
@@ -39,9 +45,9 @@ const HorizontalStories: React.FC<{
 
 const styles = StyleSheet.create({
   storiesList: {
-    paddingHorizontal: 8,
-    paddingVertical: 12,
-    paddingBottom: 60,
+    paddingHorizontal: 6,
+    paddingVertical: 5,
+    paddingBottom: 8,
   },
   storyItem: {width: 70, alignItems: 'center'},
   storyAvatar: {

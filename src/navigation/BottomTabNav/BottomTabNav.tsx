@@ -6,6 +6,10 @@ import {RootTabParamList} from '../../types/types';
 import {colors} from '../../theme/colors';
 import {StyleSheet, Text, View} from 'react-native';
 import Icon from '../../components/Icon/Icon';
+import CustomHeader from '../../components/Headers/CustomHeader';
+import {ScreenName} from '../../constants/screenConstant';
+import NVM from '../../helper/NVManager';
+import images from '../../assets/images/images';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
@@ -13,8 +17,17 @@ export default function RootTabs() {
   return (
     <Tab.Navigator
       screenOptions={({route}) => ({
+        header: () => (
+          <CustomHeader
+            title="TOUCH"
+            profileImage={images.profileImage}
+            onProfilePress={() => {
+              NVM.navigate(ScreenName.PROFILE);
+            }}
+          />
+        ),
         tabBarStyle: styles.tabBar,
-        headerShown: false,
+        headerShown: true,
         tabBarShowLabel: false,
         tabBarIconStyle: styles.tabBarIcon,
 
