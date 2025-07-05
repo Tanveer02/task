@@ -4,32 +4,32 @@ export const storiesMockData = [
   {
     id: '0',
     username: 'ij__roy',
-    avatar: images.bird,
+    avatar: images.story6,
   },
   {
     id: '1',
     username: 'akash_saini',
-    avatar: images.bird,
+    avatar: images.story2,
   },
   {
     id: '2',
     username: 'meelaayushi',
-    avatar: images.bird,
+    avatar: images.story3,
   },
   {
     id: '3',
     username: 'koomalpooja',
-    avatar: images.bird,
+    avatar: images.story4,
   },
   {
     id: '4',
     username: 'anshu_d',
-    avatar: images.bird,
+    avatar: images.story5,
   },
   {
     id: '5',
     username: 'faiziyana',
-    avatar: images.bird,
+    avatar: images.story1,
   },
 ];
 

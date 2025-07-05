@@ -20,4 +20,6 @@ export type IconFamily =
   | 'MaterialCommunityIcons'
   | 'Octicons'
   | 'SimpleLineIcons'
-  | 'Zocial';
+  | 'Zocial'
+  | string
+  | undefined;

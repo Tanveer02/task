@@ -2,23 +2,22 @@ import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 import {postsMockData, storiesMockData} from '../../../mockData/homeMockData';
 import CustomHeader from '../../../components/Headers/CustomHeader';
-import {useNavigation} from '@react-navigation/native';
 import CustomPostCard from '../../../components/CustomCard/CustomPostCard';
 import HorizontalStories from './component/HorizontalStories';
 import images from '../../../assets/images/images';
 import {colors} from '../../../theme/colors';
+import {ScreenName} from '../../../constants/screenConstant';
+import NVM from '../../../helper/NVManager';
 
 const HomeScreen: React.FC = () => {
-  //   const navigation: any = useNavigation();
   return (
     <View style={styles.container}>
       <CustomHeader
         title="TOUCH"
         profileImage={images.profileImage}
-        onProfilePress={
-          () => {}
-          // navigation.navigate('Profile')
-        }
+        onProfilePress={() => {
+          NVM.navigate(ScreenName.PROFILE);
+        }}
       />
       <HorizontalStories data={storiesMockData} />
       <FlatList

@@ -1,11 +1,10 @@
-// navigation/RootTabs.tsx
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {tabScreens} from './tabScreens';
 import {RootTabParamList} from '../../types/types';
 import {colors} from '../../theme/colors';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import Icon from '../../components/Icon/Icon';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
@@ -16,19 +15,16 @@ export default function RootTabs() {
       screenOptions={({route}) => ({
         tabBarStyle: styles.tabBar,
         headerShown: false,
+        tabBarShowLabel: false,
+        tabBarIconStyle: styles.tabBarIcon,
+
         tabBarIcon: ({focused, color, size}) => {
-          const iconName =
-            route?.name == 'Home'
-              ? focused
-                ? 'ios-home'
-                : 'ios-home-outline'
-              : focused
-              ? 'ios-settings'
-              : 'ios-settings-outline';
+          const cfg = tabScreens?.find(s => s.name === route.name)!;
+          const iconName = focused ? cfg?.icon?.active : cfg?.icon?.inactive;
 
           return (
             <Icon
-              family={'AntDesign'}
+              family={cfg?.family}
               name={iconName}
               size={size}
               color={color}
@@ -37,12 +33,11 @@ export default function RootTabs() {
         },
         tabBarActiveTintColor: 'black',
         tabBarInactiveTintColor: 'gray',
-        tabBarShowLabel: true,
       })}>
-      {tabScreens?.map(({name, component, label}) => (
+      {tabScreens.map(({name, component, label}) => (
         <Tab.Screen
           key={name}
-          name={name}
+          name={name as any}
           component={component}
           options={{tabBarLabel: label}}
         />
@@ -61,5 +56,10 @@ export const styles = StyleSheet.create({
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,
     elevation: 5,
+  },
+  tabBarIcon: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
